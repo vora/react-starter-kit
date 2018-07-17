@@ -2,7 +2,6 @@
   "name": "react-starter-kit",
   "version": "0.0.1",
   "description": "React webpack starter kit",
-  "license": "MIT",
   "keywords": [
     "webpack",
     "react",
@@ -17,6 +16,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -30,14 +30,13 @@
     "mini-css-extract-plugin": "^0.4.1",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",
-    "webpack": "^4.16.0",
+    "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8",
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "styled-components": "^3.3.3"
+    "react-router-dom": "^4.3.1"
   }
 }

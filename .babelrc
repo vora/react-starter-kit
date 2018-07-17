@@ -1,16 +1,21 @@
 {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": false
-        }
-      ],
-      "react"
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
     ],
-    "plugins": [
+    "react"
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    [
       "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
-  }
-  
+      {
+        "loose": true
+      }
+    ],
+    "transform-object-rest-spread"
+  ]
+}
