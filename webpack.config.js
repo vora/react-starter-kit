@@ -1,8 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const history = require('connect-history-api-fallback');
-const convert = require('koa-connect');
-const Dotenv = require('dotenv-webpack');
+const history = require('connect-history-api-fallback')
+const convert = require('koa-connect')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: process.env.NODE_ENV ? 'development' : 'production',
@@ -11,7 +11,7 @@ module.exports = {
   },
   serve: {
     add: app => {
-      app.use(convert(history()));
+      app.use(convert(history()))
     }
   },
   optimization: {
