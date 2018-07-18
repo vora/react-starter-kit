@@ -6,7 +6,7 @@
   "keywords": [
     "webpack",
     "react",
-    "webpack"
+    "javascript"
   ],
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-serve --config ./webpack.config.js --port 3000 --open",
