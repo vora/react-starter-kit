@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
 const history = require('connect-history-api-fallback')
 const convert = require('koa-connect')
 const Dotenv = require('dotenv-webpack')
@@ -59,7 +60,9 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      minify: process.env.NODE_ENV === 'production',
+      favicon: path.join(__dirname, './favicon.ico')
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
