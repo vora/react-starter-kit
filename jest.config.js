@@ -2,6 +2,7 @@ module.exports = {
   transform: {
     '.(js|jsx)': 'babel-jest'
   },
+  testURL: 'http://localhost',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   testMatch: ['**/?(*.)(spec|test).js?(x)'],
   coverageDirectory: 'coverage',
