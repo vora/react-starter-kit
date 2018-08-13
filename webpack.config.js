@@ -1,10 +1,12 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const convert = require('koa-connect')
 const Dotenv = require('dotenv-webpack')
+const env = require('dotenv').config({ path: __dirname + '/.env.example' })
 const history = require('connect-history-api-fallback')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   mode: process.env.NODE_ENV ? 'development' : 'production',
@@ -75,7 +77,9 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new Dotenv({
-      silent: true
-    })
+      silent: true,
+      safe: true
+    }),
+    new webpack.EnvironmentPlugin(Object.keys(env.parsed))
   ]
 }
