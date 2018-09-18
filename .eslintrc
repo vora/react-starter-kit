@@ -17,7 +17,19 @@
       "jsx": true
     }
   },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
   "rules": {
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": true,
+        "classes": true
+      }
+    ],
     "quotes": [
       "error",
       "single"
