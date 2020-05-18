@@ -5,7 +5,7 @@ import { DefaultLayout } from '../layouts/DefaultLayout';
 
 import { Home } from './Home';
 
-export const Routes: React.FC = () => {
+export const Pages: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>

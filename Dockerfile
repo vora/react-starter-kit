@@ -4,8 +4,6 @@ RUN apk update && apk upgrade && apk add --no-cache g++ make python
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . ./
-ENV MAPBOX_TOKEN ---MAPBOX_TOKEN---
-ENV CDN_URL ---CDN_URL---
 RUN npm run build
 
 FROM nginx:alpine

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Routes } from '../../routes';
+import { Pages } from '../../pages';
 
 export const App: React.FC = () => {
-  return <Routes />;
+  return <Pages />;
 };

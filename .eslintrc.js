@@ -31,7 +31,6 @@ module.exports = {
   rules: {
     'import/order': ['warn', { 'newlines-between': 'always' }],
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-interface': 'warn',

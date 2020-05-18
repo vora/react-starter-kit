@@ -3,4 +3,3 @@ webpack.config.js
 /node_modules
 /dist
 /conf
-/scripts

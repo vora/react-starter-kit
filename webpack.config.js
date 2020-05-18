@@ -130,12 +130,14 @@ module.exports = {
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin({ cleanAfterEveryBuildPatterns: ['dist'] }),
-    new CopyPlugin([
-      {
-        from: path.resolve(__dirname, './public/robots.txt'),
-        to: path.resolve(__dirname, './dist/robots.txt'),
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './public/robots.txt'),
+          to: path.resolve(__dirname, './dist/robots.txt'),
+        },
+      ],
+    }),
     new WebpackBar(),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
