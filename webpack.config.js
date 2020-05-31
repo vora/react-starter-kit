@@ -110,10 +110,39 @@ module.exports = {
         loader: 'source-map-loader',
       },
       {
-        test: /\.css$/,
-        use: [
-          prod ? MiniCssExtractPlugin.loader : 'style-loader',
+        test: /\.module\.s(a|c)ss$/,
+        loader: [
+          !prod ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: !prod,
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !prod,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          !prod ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !prod,
+            },
+          },
         ],
       },
       {
@@ -143,7 +172,7 @@ module.exports = {
       compilationSuccessInfo: {
         messages: ['You application is running on http://localhost:3000'],
       },
-      clearConsole: true,
+      clearConsole: false,
       additionalFormatters: [],
       additionalTransformers: [],
     }),
