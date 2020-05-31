@@ -20,6 +20,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es6: true,
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -37,6 +38,7 @@ module.exports = {
     'react/no-direct-mutation-state': 'off',
     'react/no-deprecated': 'off',
     'react/no-string-refs': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/require-render-return': 'off',
     'react/jsx-filename-extension': [
       'warn',
@@ -51,7 +53,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'newline-before-return': 'warn',
     'prefer-const': 'warn',
-    'no-console': 'warn',
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     'prettier/prettier': 'warn',
   },
   settings: {
