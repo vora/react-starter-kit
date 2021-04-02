@@ -4,6 +4,7 @@ RUN apk update && apk upgrade && apk add --no-cache g++ make python
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . ./
+ENV VITE_ENV_VAR ---VITE_ENV_VAR---
 RUN npm run build
 
 FROM nginx:alpine
