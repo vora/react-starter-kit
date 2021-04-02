@@ -1,7 +1,3 @@
-/// <reference path='./types/index.d.ts'/>
-
-import './polyfills';
-
 import React from 'react';
 import { render } from 'react-dom';
 
