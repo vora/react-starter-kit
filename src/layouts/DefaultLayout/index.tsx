@@ -1,5 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-export const DefaultLayout: React.FC = ({ children }) => {
-  return <Fragment>{children}</Fragment>;
+interface DefaultLayoutProps {
+  children: React.ReactNode;
+}
+
+export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
+  return <>{children}</>;
 };

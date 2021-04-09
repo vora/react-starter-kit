@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const HomeText: React.FC = () => {
+export const HomeText = () => {
   return <h1>Welcome Home</h1>;
 };

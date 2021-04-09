@@ -1,7 +1,12 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Pages } from '../../pages';
 
-export const App: React.FC = () => {
-  return <Pages />;
+export const App = () => {
+  return (
+    <BrowserRouter>
+      <Pages />
+    </BrowserRouter>
+  );
 };

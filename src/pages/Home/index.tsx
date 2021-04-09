@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { HomeText } from './components/HomeText';
 
-export const Home: React.FC = () => {
+export const Home = () => {
   return (
-    <Fragment>
+    <>
       <HomeText />
-    </Fragment>
+    </>
   );
 };
