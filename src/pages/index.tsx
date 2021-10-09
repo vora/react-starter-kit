@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { DefaultLayout } from '../layouts/DefaultLayout';
+import { RoutePaths } from '../lib/constants';
 
 import { Home } from './Home';
 
@@ -10,7 +11,7 @@ export const Pages = () => {
     <Switch>
       <Route
         exact
-        path="/"
+        path={RoutePaths.HOME}
         render={() => (
           <DefaultLayout>
             <Home />
