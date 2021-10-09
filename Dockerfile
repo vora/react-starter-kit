@@ -1,6 +1,6 @@
 FROM node:alpine as build-deps
 WORKDIR /usr/src/app
-RUN apk update && apk upgrade && apk add --no-cache g++ make python
+RUN apk update && apk upgrade && apk add --no-cache g++ make python3
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . ./
