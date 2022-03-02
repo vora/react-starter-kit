@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`HomeText > it renders and matches snapshot 1`] = `
+<h1>
+  Welcome Home
+</h1>
+`;

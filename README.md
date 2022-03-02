@@ -10,9 +10,13 @@
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
+- [Testing](#testing)
+  - [Custom Test Renderer](#custom-test-renderer)
+- [Storybook](#storybook)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -37,26 +41,37 @@ Follow the instructures below to get setup for local development
 git clone https://github.com/vora/react-starter-kit.git
 ```
 
-2. Start vite on port 3000
+2. Install Dependencies
 
 ```sh
-npm run dev
+npm install
 ```
 
-3. Run a production build
+From here you can do a number of things. All of the commands should be prefaced with `npm run`:
 
-```sh
-npm run build
-```
+| Command           | Description                                                 |
+| ----------------- | ----------------------------------------------------------- |
+| `dev`             | Start vite in development mode (on port 3000)               |
+| `build`           | Run a production build                                      |
+| `prettier`        | Run [prettier](https://prettier.io/) on the project         |
+| `eslint`          | Run [eslint](https://eslint.org/) on the project            |
+| `test`            | Run tests on the project with [vitest](https://vitest.dev/) |
+| `storybook`       | Run Storybook (runs on port 6006)                           |
+| `build-storybook` | Build Storybook for Production                              |
 
-4. Run prettier
+## Testing
 
-```sh
-npm run prettier
-```
+This project is setup for snapshot testing with [vitest](https://vitest.dev/). Vitest is a test runner that is very similar to [Jest](https://jestjs.io/) but runs on Vite for much better performance. We use [happy-dom](https://github.com/capricorn86/happy-dom) alongside [React Test Renderer](https://reactjs.org/docs/test-renderer.html) to render the dom for these tests.
 
-5. Run eslint
+### Custom Test Renderer
 
-```sh
-npm run eslint
-```
+This project ships with a custom test renderer. This test renderer is located at `src/lib/testHelpers/testRenderer.tsx`. You can specify any number of providers inside the implementation so you won't have to specify them when rendering each component. Refer to `src/pages/Home/components/HomeText/__tests__/HomeText.test.tsx` for a usage example.
+
+## Storybook
+
+This project comes with [Storybook](https://storybook.js.org/). Stories for storybook are located under `src/stories` by default. You can change this by editing `.storybook/main.ts`. Storybook also ships with support for custom decorators like a theme or Redux provider. You can find the configuration for that under `.storybook/preview.tsx`. Below are the commands for storybook. All commands are prefaced with `npm run`:
+
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `storybook`       | Run Storybook (runs on port 6006) |
+| `build-storybook` | Build Storybook for Production    |
