@@ -1,0 +1,10 @@
+ignores: [
+    # Add any dev dependencies, or false positives here.
+    #
+    # Ignore storybook related packages
+    '@storybook/addon-actions',
+    '@storybook/addon-essentials',
+    '@storybook/addon-links',
+    'storybook-builder-vite',
+  ]
+skip-missing: true

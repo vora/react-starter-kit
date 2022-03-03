@@ -1,9 +1,9 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-interface DefaultLayoutProps {
-  children: React.ReactNode;
-}
-
-export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
-  return <>{children}</>;
+export const DefaultLayout: React.FC = () => {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 };
