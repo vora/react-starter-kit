@@ -38,6 +38,7 @@ module.exports = {
     'react/no-direct-mutation-state': 'off',
     'react/no-deprecated': 'off',
     'react/no-string-refs': 'off',
+    'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/require-render-return': 'off',
     'react/jsx-filename-extension': [

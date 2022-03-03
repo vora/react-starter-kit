@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HomeText } from '..';
 
 import testRenderer from '~/lib/testHelpers/testRenderer';

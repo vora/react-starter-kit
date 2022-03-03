@@ -2,7 +2,7 @@
 // React Test Renderer that provides
 // Components a memory router as well as
 // Any additional providers that you specify.
-import React from 'react';
+
 import { ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import TestRenderer, {
