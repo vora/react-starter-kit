@@ -17,6 +17,7 @@
 - [Testing](#testing)
   - [Custom Test Renderer](#custom-test-renderer)
 - [Storybook](#storybook)
+- [Unused Code / Packages](#unused-code--packages)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -49,15 +50,17 @@ npm install
 
 From here you can do a number of things. All of the commands should be prefaced with `npm run`:
 
-| Command           | Description                                                 |
-| ----------------- | ----------------------------------------------------------- |
-| `dev`             | Start vite in development mode (on port 3000)               |
-| `build`           | Run a production build                                      |
-| `prettier`        | Run [prettier](https://prettier.io/) on the project         |
-| `eslint`          | Run [eslint](https://eslint.org/) on the project            |
-| `test`            | Run tests on the project with [vitest](https://vitest.dev/) |
-| `storybook`       | Run Storybook (runs on port 6006)                           |
-| `build-storybook` | Build Storybook for Production                              |
+| Command                | Description                                                           |
+| ---------------------- | --------------------------------------------------------------------- |
+| `dev`                  | Start vite in development mode (on port 3000)                         |
+| `build`                | Run a production build                                                |
+| `prettier`             | Run [prettier](https://prettier.io/) on the project                   |
+| `eslint`               | Run [eslint](https://eslint.org/) on the project                      |
+| `test`                 | Run tests on the project with [vitest](https://vitest.dev/)           |
+| `storybook`            | Run Storybook (runs on port 6006)                                     |
+| `build-storybook`      | Build Storybook for Production                                        |
+| `find-unused-code`     | Run [tsprune](https://www.npmjs.com/package/ts-prune) on the project  |
+| `find-unused-packages` | Run [depcheck](https://www.npmjs.com/package/depcheck) on the project |
 
 ## Testing
 
@@ -75,3 +78,16 @@ This project comes with [Storybook](https://storybook.js.org/). Stories for stor
 | ----------------- | --------------------------------- |
 | `storybook`       | Run Storybook (runs on port 6006) |
 | `build-storybook` | Build Storybook for Production    |
+
+## Unused Code / Packages
+
+This project uses two tools: [tsprune](https://www.npmjs.com/package/ts-prune) and [depcheck](https://www.npmjs.com/package/depcheck), to check for unused code and unused packages respectively.
+
+Depcheck will check your imports and report any unused packages. This can often have false positives as not every packages is going to be used in a way that is picked up by depcheck. Whenever this happens, add the package in question to `.depcheckrc.yml`.
+
+TSPrune will use Typescript to determine if there are any unused code and exports. For cases where a piece of code is not being used but you don't want to get an error on it. Add a `//ts-prune-ignore-next` comment above the code.
+
+| Command                | Description                 |
+| ---------------------- | --------------------------- |
+| `find-unused-code`     | Run tsprune on the project  |
+| `find-unused-packages` | Run depcheck on the project |
