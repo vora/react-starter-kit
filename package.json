@@ -15,7 +15,9 @@
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "test": "vitest run",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "find-unused-code": "ts-prune -p ./tsconfig.json --error --ignore src/stories",
+    "find-unused-packages": "depcheck --config=./.depcheckrc.yml"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -38,6 +40,7 @@
     "@vitejs/plugin-react": "^1.2.0",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.1.0",
+    "depcheck": "^1.4.3",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
@@ -48,6 +51,7 @@
     "happy-dom": "^2.43.1",
     "prettier": "^2.5.1",
     "storybook-builder-vite": "^0.1.17",
+    "ts-prune": "^0.10.3",
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vite-plugin-svgr": "^1.0.1",
