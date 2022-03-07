@@ -49,6 +49,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "happy-dom": "^2.43.1",
+    "jest-styled-components": "^7.0.8",
     "prettier": "^2.5.1",
     "storybook-builder-vite": "^0.1.17",
     "ts-prune": "^0.10.3",

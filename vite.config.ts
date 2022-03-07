@@ -20,5 +20,12 @@ export default {
   test: {
     globals: true,
     environment: 'happy-dom',
+    setupFiles: path.resolve(
+      process.cwd(),
+      'src',
+      'lib',
+      'testHelpers',
+      'setupTests.ts',
+    ),
   },
 };
