@@ -3,7 +3,7 @@ import { HomeText } from './components/HomeText';
 export const Home = () => {
   return (
     <>
-      <HomeText />
+      <HomeText welcomeText="Welcome Home!" />
     </>
   );
 };

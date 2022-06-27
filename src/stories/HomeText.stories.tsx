@@ -1,9 +1,15 @@
 import { Story } from '@ladle/react';
 
-import { HomeText } from '~/pages/Home/components/HomeText';
+import { HomeText, HomeTextProps } from '~/pages/Home/components/HomeText';
 
 export default {
   title: 'home-text',
 };
 
-export const HomeTextComponent: Story<any> = (args) => <HomeText {...args} />;
+export const HomeTextComponent: Story<HomeTextProps> = (args) => (
+  <HomeText {...args} />
+);
+
+HomeTextComponent.args = {
+  welcomeText: 'Welcome Home!',
+};

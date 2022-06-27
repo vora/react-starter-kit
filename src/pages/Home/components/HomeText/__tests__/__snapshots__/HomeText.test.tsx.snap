@@ -2,6 +2,6 @@
 
 exports[`HomeText > it renders and matches snapshot 1`] = `
 <h1>
-  Welcome Home
+  Welcome Home!
 </h1>
 `;
