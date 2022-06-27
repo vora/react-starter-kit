@@ -60,7 +60,7 @@
     "vitest": "^0.16.0"
   },
   "engines": {
-    "yarn": "USE_NODE",
+    "yarn": "USE_NPM",
     "node": ">=16",
     "npm": ">=8"
   }
