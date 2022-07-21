@@ -56,9 +56,10 @@ From here you can do a number of things. All of the commands should be prefaced 
 | `build`                | Run a production build                                                |
 | `prettier`             | Run [prettier](https://prettier.io/) on the project                   |
 | `eslint`               | Run [eslint](https://eslint.org/) on the project                      |
+| `tsc` / `tsc -w`       | Run `tsc` in either check or watch mode. Emit disabled.               |
 | `test`                 | Run tests on the project with [vitest](https://vitest.dev/)           |
-| `storybook`            | Run Storybook (runs on port 6006)                                     |
-| `build-storybook`      | Build Storybook for Production                                        |
+| `ladle`                | Run Storybook (runs on port 6006)                                     |
+| `ladle-build`          | Build Storybook for Production                                        |
 | `find-unused-code`     | Run [tsprune](https://www.npmjs.com/package/ts-prune) on the project  |
 | `find-unused-packages` | Run [depcheck](https://www.npmjs.com/package/depcheck) on the project |
 
@@ -70,14 +71,22 @@ This project is setup for snapshot testing with [vitest](https://vitest.dev/). V
 
 This project ships with a custom test renderer. This test renderer is located at `src/lib/testHelpers/testRenderer.tsx`. You can specify any number of providers inside the implementation so you won't have to specify them when rendering each component. Refer to `src/pages/Home/components/HomeText/__tests__/HomeText.test.tsx` for a usage example.
 
-## Storybook
+## Ladle (Storybook Alternative)
 
-This project comes with [Storybook](https://storybook.js.org/). Stories for storybook are located under `src/stories` by default. You can change this by editing `.storybook/main.ts`. Storybook also ships with support for custom decorators like a theme or Redux provider. You can find the configuration for that under `.storybook/preview.tsx`. Below are the commands for storybook. All commands are prefaced with `npm run`:
+This project comes with [Ladle](https://ladle.dev). Ladle is a lightweight alternative to Storybook that runs much faster and is generally much simpler than it's more established counterpart. This project comes with two commands related to ladle, they are listed below. Refer to `src/stories/HomeText.stories.tsx` for an example on how to write a component story. The most basic story you can write will looks like this:
 
-| Command           | Description                       |
-| ----------------- | --------------------------------- |
-| `storybook`       | Run Storybook (runs on port 6006) |
-| `build-storybook` | Build Storybook for Production    |
+```js
+// src/stories/MyComponent.stories.tsx
+// Here `Story` is imported from ladle.
+
+export const StoryComponent: Story<MyComponentProps> = props => <MyComponent {...props}>
+
+```
+
+| Command       | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| `ladle`       | Run Ladle (runs on port 6006)                        |
+| `build-ladle` | Build Ladle for Production (outputs to `dist-ladle`) |
 
 ## Unused Code / Packages
 

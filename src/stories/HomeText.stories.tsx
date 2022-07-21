@@ -1,15 +1,15 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Story } from '@ladle/react';
 
-import { HomeText } from '~/pages/Home/components/HomeText';
+import { HomeText, HomeTextProps } from '~/pages/Home/components/HomeText';
 
 export default {
-  title: `HomeText`,
-  component: HomeText,
-  argTypes: {},
-} as ComponentMeta<typeof HomeText>;
+  title: 'home-text',
+};
 
-const Template: ComponentStory<typeof HomeText> = (args) => (
+export const HomeTextComponent: Story<HomeTextProps> = (args) => (
   <HomeText {...args} />
 );
 
-export const HomeTextComponent = Template.bind({});
+HomeTextComponent.args = {
+  welcomeText: 'Welcome Home!',
+};
